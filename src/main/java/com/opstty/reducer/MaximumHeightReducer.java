@@ -7,13 +7,13 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-public class MaximumHeightReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
-    private IntWritable result = new IntWritable();
+public class MaximumHeightReducer extends Reducer<Text, DoubleWritable, Text, DoubleWritable> {
+    private DoubleWritable result = new DoubleWritable();
 
-    public void reduce(Text key, Iterable<IntWritable> values, Context context)
+    public void reduce(Text key, Iterable<DoubleWritable> values, Context context)
             throws IOException, InterruptedException {
-        int h = 0;
-        for (IntWritable val : values) {
+        double h = 0;
+        for (DoubleWritable val : values) {
             if (h < val.get()){
                 h = val.get();
             }
