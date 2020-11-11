@@ -8,7 +8,7 @@ import org.apache.hadoop.io.IntWritable;
 
 import java.io.IOException;
 
-public class OldestMapper extends Mapper<LongWritable, Text, NullWritable, CustomWritable>{
+public class OldestMapper extends Mapper<LongWritable, Text, IntWritable, CustomWritable>{
 
     public void map(LongWritable key, Text value, Mapper.Context context) throws IOException, InterruptedException {
         if (!value.toString().contains("ARRONDISSEMENT") && !value.toString().contains("ANNEE PLANTATION")) {
@@ -18,8 +18,11 @@ public class OldestMapper extends Mapper<LongWritable, Text, NullWritable, Custo
             if (a!= null && a.length()>0){
                     annee = Integer.parseInt(a);
             }
-            CustomWritable info = new CustomWritable(district, annee);
-            context.write(NullWritable.get(),info);
+            IntWritable iwa = new IntWritable(annee);
+            IntWritable iwd = new IntWritable(district);
+            CustomWritable info = new CustomWritable(iwd, iwa);
+            IntWritable i = new IntWritable(1);
+            context.write(i,info);
         }
 
     }

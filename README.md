@@ -258,3 +258,10 @@ Résultat :
 
 1.8.6 :
 Commande :
+yarn jar hadoop-examples-mapreduce-1.0-SNAPSHOT-jar-with-dependencies.jar oldest trees.csv MRLabJava/Oldest
+Résultat :
+-sh-4.2$ hdfs dfs -cat MRLabJava/Oldest/part-r-00000
+1       District : 5
+
+1.8.7 :
+Commande :

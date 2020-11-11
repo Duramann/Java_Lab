@@ -9,30 +9,30 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class CustomWritable implements Writable {
+public class CustomWritable2 implements Writable {
     private IntWritable district;
-    private IntWritable age;
+    private IntWritable trees;
 
-    public CustomWritable(){
+    public CustomWritable2(){
         this.district = new IntWritable(0);
-        this.age = new IntWritable(2020);
+        this.trees = new IntWritable(0);
     }
 
-    public CustomWritable(IntWritable d, IntWritable a){
+    public CustomWritable2(IntWritable d, IntWritable a){
         this.district = d;
-        this.age = a;
+        this.trees = a;
     }
 
     public IntWritable getAge(){
-        return this.age;
+        return this.trees;
     }
 
     public IntWritable getDistrict(){
         return this.district;
     }
 
-    public void setAge(IntWritable a){
-        this.age = a;
+    public void setTrees(IntWritable a){
+        this.trees = a;
     }
 
     public void setDistrict(IntWritable d){
@@ -42,18 +42,18 @@ public class CustomWritable implements Writable {
     @Override
     public void readFields(DataInput in) throws IOException {
         district.readFields(in);
-        age.readFields(in);
+        trees.readFields(in);
     }
 
     @Override
     public void write(DataOutput data) throws IOException {
         district.write(data);
-        age.write(data);
+        trees.write(data);
     }
 
     @Override
     public String toString() {
-        return "District : " + getDistrict();
+        return "District : " + getDistrict() + ", Number of trees : " + getAge() ;
     }
 
 

@@ -11,6 +11,8 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
+//Answer to 1.8.2 Show all existing species
+
 public class Species {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();

@@ -1,7 +1,7 @@
 package com.opstty.job;
 
-import com.opstty.mapper.NumberTreesSpeciesMapper;
 import com.opstty.reducer.IntSumReducer;
+import com.opstty.mapper.TreesByDistrictMapper;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -11,19 +11,19 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
-//Answer to 1.8.3 Number of trees by species
+//First job to answer 1.8.7
 
-public class NumberTreesSpecies {
+public class TreesbyDistrict {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
         if (otherArgs.length < 2) {
-            System.err.println("Usage: number species <in> [<in>...] <out>");
+            System.err.println("Usage: trees_district <in> [<in>...] <out>");
             System.exit(2);
         }
-        Job job = Job.getInstance(conf, "number_species");
-        job.setJarByClass(NumberTreesSpecies.class);
-        job.setMapperClass(NumberTreesSpeciesMapper.class);
+        Job job = Job.getInstance(conf, "trees_district");
+        job.setJarByClass(TreesbyDistrict.class);
+        job.setMapperClass(TreesByDistrictMapper.class);
         job.setCombinerClass(IntSumReducer.class);
         job.setReducerClass(IntSumReducer.class);
         job.setOutputKeyClass(Text.class);

@@ -16,6 +16,8 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
+//Answer to 1.8.6 District containing the oldest tree
+
 public class Oldest {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
@@ -29,7 +31,7 @@ public class Oldest {
         job.setMapperClass(OldestMapper.class);
         job.setCombinerClass(OldestReducer.class);
         job.setReducerClass(OldestReducer.class);
-        job.setOutputKeyClass(NullWritable.class);
+        job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(CustomWritable.class);
         for (int i = 0; i < otherArgs.length - 1; ++i) {
             FileInputFormat.addInputPath(job, new Path(otherArgs[i]));

@@ -13,6 +13,8 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
+//Answer to 1.8.5 Sort the trees height from smallest to largest
+
 public class HeightSort {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();

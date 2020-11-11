@@ -11,6 +11,8 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
+// Answer to 1.8.1 Districts containing trees
+
 public class District {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
