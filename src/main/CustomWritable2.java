@@ -23,7 +23,7 @@ public class CustomWritable2 implements Writable {
         this.trees = a;
     }
 
-    public IntWritable getAge(){
+    public IntWritable getTrees(){
         return this.trees;
     }
 
@@ -53,7 +53,7 @@ public class CustomWritable2 implements Writable {
 
     @Override
     public String toString() {
-        return "District : " + getDistrict() + ", Number of trees : " + getAge() ;
+        return "District : " + getDistrict() + ", Number of trees : " + getTrees() ;
     }
 
 

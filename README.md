@@ -268,4 +268,4 @@ ce n'est surement pas ce qui etait attendu non plus.
 
 
 1.8.7 :
-Commande :
+On a pas reussi la deuxième phase de mapreduce car difficulté a obtenir l'information qui sort du premier mapreduce. (et manque de temps)

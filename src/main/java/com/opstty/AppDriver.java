@@ -25,6 +25,8 @@ public class AppDriver {
                     "A map/reduce program that displays the district with the oldest tree.");
             programDriver.addClass("trees_district", TreesbyDistrict.class,
                     "A map/reduce program that displays the number of trees by district.");
+            programDriver.addClass("max_number", MaxNumber.class,
+                    "A map/reduce program that displays the district with the most trees.");
 
             exitCode = programDriver.run(argv);
         } catch (Throwable throwable) {
