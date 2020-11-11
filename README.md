@@ -108,6 +108,7 @@ Ulmus   1
 Zelkova 4
 
 
+
 1.8.4 :
 Commande :
 -sh-4.2$ yarn jar hadoop-examples-mapreduce-1.0-SNAPSHOT-jar-with-dependencies.jar max_height trees.csv MRLabJava/MaxHeight
@@ -261,7 +262,10 @@ Commande :
 yarn jar hadoop-examples-mapreduce-1.0-SNAPSHOT-jar-with-dependencies.jar oldest trees.csv MRLabJava/Oldest
 Résultat :
 -sh-4.2$ hdfs dfs -cat MRLabJava/Oldest/part-r-00000
-1       District : 5
+1       District : 5, Age : 1601
+(Le job ne renvoie pas uniquement le District mais aussi l'age. On aurait pu renvoyer uniquement le District en modifiant le toString dans notre custom writable mais 
+ce n'est surement pas ce qui etait attendu non plus.
+
 
 1.8.7 :
 Commande :
