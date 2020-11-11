@@ -1,3 +1,6 @@
+DURA - YKHLEF - JAVA MAPREDUCE TP
+lien git : https://github.com/Duramann/Java_Lab
+
 1.8.1 :
 Commande :
 -sh-4.2$  yarn jar hadoop-examples-mapreduce-1.0-SNAPSHOT-jar-with-dependencies.jar district trees.csv MRLabJava/District
