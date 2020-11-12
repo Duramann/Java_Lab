@@ -159,6 +159,7 @@ Zelkova 30.0
 1.8.5:
 Commande :
 yarn jar hadoop-examples-mapreduce-1.0-SNAPSHOT-jar-with-dependencies.jar sort_height trees.csv MRLabJava/SortedHeight
+No reducer here because the heights are key and so the basic reduce from Reducer class sort them.
 Résultat :
 -sh-4.2$ hdfs dfs -cat MRLabJava/SortedHeight/part-r-00000
 0.0
@@ -266,8 +267,8 @@ yarn jar hadoop-examples-mapreduce-1.0-SNAPSHOT-jar-with-dependencies.jar oldest
 Résultat :
 -sh-4.2$ hdfs dfs -cat MRLabJava/Oldest/part-r-00000
 1       District : 5, Age : 1601
-(Le job ne renvoie pas uniquement le District mais aussi l'age. On aurait pu renvoyer uniquement le District en modifiant le toString dans notre custom writable mais 
-ce n'est surement pas ce qui etait attendu non plus.
+CustomWritable is the writable we made to store both the district and the date of birth of the trees in one single value.
+We didn't know how to return only the District (even if we could have modify the toString of our writable to only print the district)
 
 
 1.8.7 :
